@@ -1,4 +1,7 @@
 import streamlit as st
+import pandas as pd
+import pickle
+import sklearn
 
 st.title("Housing Prices Prediction")
 
@@ -7,7 +10,7 @@ st.write("""
 We have trained several models to predict the price of a house based on features such as the area of the house and the condition and quality of their different rooms.
 
 """)
-import pickle 
+
 
 model = pickle.load(open('trained_pipe_knn.sav', 'rb'))
 
@@ -16,7 +19,7 @@ TotalBsmtSF = st.number_input("Basement Square Feet")
 BedroomAbvGr = st.number_input("Number of Bedrooms")
 GarageCars = st.number_input("Car spaces in Garage")
 
-import pandas as pd
+
 new_house = pd.DataFrame({
     'LotArea':[LotArea],
     'TotalBsmtSF':[TotalBsmtSF],
