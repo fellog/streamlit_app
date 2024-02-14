@@ -7,18 +7,9 @@ st.write("""
 We have trained several models to predict the price of a house based on features such as the area of the house and the condition and quality of their different rooms.
 
 """)
-
-import os
-
-# Specify the path to the desired folder
-new_folder_path = 'C:/Users/metz8/documents/Data Science Bootcamp/08 Recommender Systems/Streamlit'
-
-# Change the current working directory to the specified folder
-os.chdir(new_folder_path)
-
 import pickle 
 
-model = pickle.load(open('models/trained_pipe_knn.sav', 'rb'))
+model = pickle.load(open('trained_pipe_knn.sav', 'rb'))
 
 LotArea = st.number_input("Lot Area")
 TotalBsmtSF = st.number_input("Basement Square Feet")
